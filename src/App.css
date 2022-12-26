@@ -1,45 +1,191 @@
+body, * {
+  margin: 0 !important;
+}
+
 .App {
-  text-align: center;
+  background-color: black;
+  color: #fff;
+  height: max-content;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
+/* Home */
 .navBar {
   list-style: lower-roman;
   justify-content: center;
   display: flex;
+  flex-direction: column;
   gap: 75px;
 }
 
-.App-link {
-  color: #61dafb;
+.navBar > li > a {
+  text-decoration: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-container {
+  position: relative;
 }
+
+.image-container > img {
+  /* max-width: 100%; */
+  object-fit: cover;
+  width: -webkit-fill-available;
+  height: 99vh;
+}
+
+.home-header{
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  font-size: 24px;
+  color: #093c7f;
+  background-color: #239bf52b;
+}
+
+.HomeBox {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.HomeBox > h1 {
+  font-size: 5rem;
+  color: #093c7f;
+  margin-bottom: 20px !important;
+}
+
+.HomeBox > span{
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: azure;
+  color: #093c7f;
+  padding: 5px;
+}
+
+.fade {
+  background: linear-gradient(90deg,#fff,transparent 30%,transparent 70%,#fff);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.pageHeader {
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+  padding: 1em;
+  text-align: center;
+}
+
+.backBtn {
+  width: 4em;
+  display: block;
+  position: absolute;
+  margin: -23px 0px 0px 20px !important;
+}
+
+/* BMI */
+.bmiInput {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 3em;
+  padding: 2em;
+}
+
+.bmiBtn {
+  display: block;
+  position: relative;
+  left: 45%;
+  border-radius: 25px;
+  background-color: darkorange;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  width: 10%;
+  padding: 2em;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border: 3px solid #245e94 !important;
+  box-shadow: 0 0 30px 0 #4ea2f3;
+}
+
+.text-input {
+  position: relative;
+  /* margin-top: 50px; */
+  margin-top: 30px !important;
+  margin-left: 10em !important;
+}
+.text-input input[type="text"] {
+  display: inline-block;
+  width: 500px;
+  height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 10px 10px 10px 100px;
+  transition: all 0.1s ease-out;
+}
+.text-input input[type="text"] + label {
+  /* position: absolute; */
+  position: relative;
+  top: 0;
+  /* left: 0; */
+  left: -34.5em;
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  border-radius: 3px 0 0 3px;
+  padding: 0 20px;
+  background: #e03616;
+  transform: translateZ(0) translateX(0);
+  transition: all 0.3s ease-in;
+  transition-delay: 0.2s;
+}
+.text-input input[type="text"]:focus + label {
+  transform: translateY(-120%) translateX(0%);
+  border-radius: 3px;
+  transition: all 0.1s ease-out;
+}
+.text-input input[type="text"]:focus {
+  padding: 10px;
+  transition: all 0.3s ease-out;
+  transition-delay: 0.2s;
+}
+
+/* counter */
+.counterOutput {
+  text-align: center;
+  font-size: 3rem;
+  padding: 1em;
+}
+
+/* ImgCompress */
+.imgInp {
+  margin-left: 10em !important;
+  cursor: pointer;
+}
+
+/* fetchApi */
+table {
+  border-collapse: collapse;
+  margin-left: 30em !important;
+  /* height: max-content; */
+}
+
+th {
+  border: 2px solid rgb(242, 116, 38);
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+  border: 2px solid rgb(242, 116, 38);
+  padding: 10px;
+}
+

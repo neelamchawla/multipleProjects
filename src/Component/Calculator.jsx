@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PointTarget from 'react-point';
 import './Calculator.css'
+import Back from '../Img/back.png';
+import {Link} from "react-router-dom";
 
 const CalculatorOperations = {
     '/': (prevValue, nextValue) => prevValue / nextValue,
@@ -237,7 +239,13 @@ class Calculator extends Component {
         const clearText = clearDisplay ? 'C' : 'AC'
         
         return (
-          <div className="calculator">
+          <div className="calculator" style={{ height: "100vh" }}>
+
+        <h1 className='pageHeader'>Calculator</h1>
+        <Link to="/">
+            <img title='Back To Home Page' className='backBtn' src={Back} />
+        </Link>
+
             <CalcDisplay value={displayValue}/>
             <div className="calculator-keypad">
               <div className="input-keys">

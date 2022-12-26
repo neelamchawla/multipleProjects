@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Compressor from 'compressorjs';
+import Back from '../Img/back.png';
+import {Link} from "react-router-dom";
 
 const ImgCompress = () => {
   const [oldImg, setOldImg] = useState(null);
@@ -8,7 +10,7 @@ const ImgCompress = () => {
   const handleCompressedUpload = (e) => {
     const image = e.target.files[0];
     setOldImg(image.size);
-    // console.log(image.size);
+    console.log(image);
     new Compressor(image, {
       quality: 0.8, // 0.6 can also be used, but its not recommended to go below.
       success: (compressedResult) => {
@@ -20,8 +22,14 @@ const ImgCompress = () => {
     });
   };
   
-  return ( <>
+  return ( <div style={{ height: "100vh" }}>
+      <h1 className='pageHeader'>Image Compress</h1>
+      <Link to="/">
+          <img title='Back To Home Page' className='backBtn' src={Back} />
+      </Link>
+
       <input
+        className='counterOutput imgInp'
         accept="image/*,capture=camera"
         capture="camera"
         type="file"
@@ -29,11 +37,15 @@ const ImgCompress = () => {
         />
 
         <br/>
-        Old Image size: {oldImg}
+        <p className='counterOutput'>
+          Old Image size: {oldImg}
+        </p>
         <br/>
-        New Image size: {compressedFile}
+        <p className='counterOutput'>
+          New Image size: {compressedFile}
+        </p>
       {/* {compressedFile} */}
-    </>
+    </div>
   );
 };
 

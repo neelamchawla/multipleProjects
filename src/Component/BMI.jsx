@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import Back from '../Img/back.png';
+import {Link} from "react-router-dom";
 
 function BMI() {
 
@@ -20,21 +22,34 @@ function BMI() {
     }
 
   return (
-    <div className='Calc'>
-        <h1>BMI Calculator</h1>
+    <div className='BMI' style={{ height: "100vh" }}>
+        <h1 className='pageHeader'>BMI Calculator</h1>
+
+        <Link to="/">
+            <img title='Back To Home Page' className='backBtn' src={Back} />
+        </Link>
+
         <form onSubmit={calculate}>
-            <div>
+            {/* <div className='bmiInput'>
                 <label>Height</label>
                 <input value={height} onChange={(e) => setHeight(e.target.value)}/> in Inches
             </div>
-            <div>
+            <div style={{ marginLeft: "-24px !important" }} className='bmiInput'>
                 <label>Weight</label>
                 <input value={weight} onChange={(e) => setWeight(e.target.value)}/> in kgs
+            </div> */}
+            <div className="text-input bmiInput">
+                <input type="text" id="input1" placeholder="Enter Height in Inches" onChange={(e) => setHeight(e.target.value)} />
+                <label for="input1">Height</label>
             </div>
-            <button className='btn' type='submit'>Calculate</button>
+            <div className="text-input bmiInput">
+                <input type="text" id="input1" placeholder="Enter Weight in kgs" onChange={(e) => setWeight(e.target.value)} />
+                <label for="input1">Weight</label>
+            </div>
+            <button className='bmiBtn' type='submit'>Calculate</button>
         </form>
-        <p>BMI: {bmi}</p>
-        <strong>
+        <p className='bmiInput' >BMI: {bmi}</p>
+        <strong className='bmiInput'>
         {
             bmi < 18.5
             ? "Underweight"

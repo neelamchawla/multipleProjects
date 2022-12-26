@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Back from '../Img/back.png';
+import {Link} from "react-router-dom";
 
 function Counter() {
 
@@ -10,6 +12,7 @@ function Counter() {
     }
     let decreaseVal = () => {
         if (counterNumber === 0) {
+            alert("Sorry! You can't go below Zero")
             return
         } else {
             setCounterNumber((counterNumber -= 1));
@@ -21,13 +24,17 @@ function Counter() {
     }
 
   return (
-    <div>
-        <h1>Counter</h1>
-        <h3>{counterNumber}</h3>
-        <hr/>
-        <button onClick={increaseVal}>+</button>
-        <button onClick={decreaseVal}>-</button>
-        <button onClick={resetVal}>Reset</button>
+    <div style={{ height: "100vh" }}>
+        <h1 className='pageHeader'>Counter</h1>
+        <Link to="/">
+            <img title='Back To Home Page' className='backBtn' src={Back} />
+        </Link>
+
+        <h3 className='counterOutput'>{'{'} {counterNumber} {'}'}</h3>
+        {/* <hr/> */}
+        <button className='bmiBtn' style={{ display: "inline", left: '35%' }} onClick={increaseVal}>+</button>
+        <button className='bmiBtn' style={{ display: "inline", left: '35%' }} onClick={decreaseVal}>-</button>
+        <button className='bmiBtn' style={{ display: "inline", left: '35%' }} onClick={resetVal}>Reset</button>
     </div>
   )
 }
