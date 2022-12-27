@@ -18,10 +18,10 @@ function Home() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="BMI">BMI</Link></li>
             <li><Link to="Counter">Counter</Link></li>
-            <li><Link to="EmojiTab">EmojiTab</Link></li>
+            <li><Link to="EmojiSearch">Emoji Search</Link></li>
             <li><Link to="Calculator">Calculator</Link></li>
-            <li><Link to="ImgCompress">ImgCompress</Link></li>
-            <li><Link to="FetchApi">FetchApi</Link></li>
+            <li><Link to="ImgCompress">Image Compress</Link></li>
+            <li><Link to="FetchApi">Fetch Api</Link></li>
             </ul>
         </div>
         

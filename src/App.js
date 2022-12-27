@@ -18,7 +18,7 @@ function App() {
           <><Route exact path="/" element={<Home />} /></>
           <><Route exact path="BMI" element={<BMI />} /></>
           <><Route exact path="Counter" element={<Counter />} /></>
-          <><Route exact path="EmojiTab" element={<EmojiTab />} /></>
+          <><Route exact path="EmojiSearch" element={<EmojiTab />} /></>
           <><Route exact path="Calculator" element={<Calculator />} /></>
           <><Route exact path="ImgCompress" element={<ImgCompress />} /></>
           <><Route exact path="FetchApi" element={<FetchApi />} /></>

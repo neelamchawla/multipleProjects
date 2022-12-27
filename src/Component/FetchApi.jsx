@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Back from '../Img/back.png';
 import {Link} from "react-router-dom";
-
+import BG from '../Img/loading.gif';
 class FetchApi extends Component {
 
     constructor(props) {
@@ -40,10 +40,14 @@ class FetchApi extends Component {
     // })
 
     if (!loader) {
-        return (
-            <div style={{ height: "100vh" }}>
-                <h1>Loading.....</h1>
+        return (<>
+            <div class="image-container" style={{ height: "100vh" }}>
+                <img src={BG} />
             </div>
+            <div className='HomeBox'>
+                <h1 className='fetchLoading'>Loading</h1>
+            </div>
+        </>
         )
     }
     

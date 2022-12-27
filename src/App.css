@@ -23,6 +23,11 @@ body, * {
 .navBar > li > a {
   text-decoration: none !important;
 }
+.navBar > li > a:hover {
+  color: floralwhite;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
 .image-container {
   position: relative;
@@ -178,6 +183,14 @@ input[type="text"]:focus {
 }
 
 /* fetchApi */
+
+.fetchLoading {
+  font-size: 4rem !important;
+  color: #338d79 !important;
+  margin-top: 1.5em !important;
+  margin-left: 8em !important;
+}
+
 table {
   border-collapse: collapse;
   margin-left: 30em !important;
