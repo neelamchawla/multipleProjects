@@ -10,11 +10,14 @@ body, * {
 
 /* Home */
 .navBar {
-  list-style: lower-roman;
+  /* list-style: lower-roman; */
+  list-style: none;
   justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 75px;
+  padding-right: 1.5em;
+  text-align: center;
 }
 
 .navBar > li > a {
@@ -34,11 +37,14 @@ body, * {
 
 .home-header{
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 80%;
   font-size: 24px;
-  color: #093c7f;
-  background-color: #239bf52b;
+  /* color: #093c7f;
+  background-color: #239bf52b; */
+  background-color: #8acfff73;
+  border-radius: 20px;
+  padding: 15px 0 15px 0;
 }
 
 .HomeBox {
@@ -189,3 +195,23 @@ td {
   padding: 10px;
 }
 
+@media screen and (max-width: 992px) {
+  .image-container>img {		
+    height: 107vh;
+  }
+
+.HomeBox {			
+    left: 10%;
+    position: absolute;
+    top: 4%;
+  }
+
+.home-header {		
+    background-color: #f3faffab;
+    color: #4c83ca;
+    font-size: 24px;
+    left: 28%;
+    position: absolute;
+    top: 28%;
+  }
+}
